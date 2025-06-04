@@ -25,21 +25,3 @@ SET(BRINGAUTO_SYSTEM_DEP OFF
     CACHE BOOL
     "Enable/disable using system dependencies. If OFF we use BringAuto Package Tracker to download dependencies"
 )
-    
-SET(BRINGAUTO_INSTALL ON
-    CACHE BOOL
-    "Enable/disable project INSTALL"
-)
-SET(BRINGAUTO_PACKAGE ON
-    CACHE BOOL
-    "Enable/disable project INSTALL"
-)
-IF(BRINGAUTO_PACKAGE AND NOT BRINGAUTO_INSTALL)
-    SET(BRINGAUTO_INSTALL ON
-        CACHE BOOL
-        "Enable/disable project INSTALL"
-        FORCE
-    )
-    MESSAGE(WARNING "BRINGAUTO_PACKAGE is ON, switching BRINGAUTO_INSTALL to ON!")
-ENDIF()
-
