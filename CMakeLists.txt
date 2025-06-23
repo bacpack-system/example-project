@@ -31,3 +31,12 @@ CMDEF_ADD_EXECUTABLE(
     VERSION 1.0.0
 )
 TARGET_LINK_LIBRARIES(example-project PUBLIC CURL::libcurl ZLIB::ZLIB)
+
+IF(BRINGAUTO_INSTALL)
+    # Install created target
+    CMDEF_INSTALL(TARGET example-project)
+
+    # Install all shared library dependencies needed for json_target
+    # and update RUNPATH.
+    BA_PACKAGE_DEPS_IMPORTED(example-project)
+ENDIF()
