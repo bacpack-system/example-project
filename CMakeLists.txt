@@ -2,8 +2,8 @@
 # BringAuto CXX Project temple.
 #
 
-PROJECT(example-project CXX)
 CMAKE_MINIMUM_REQUIRED(VERSION 3.18)
+PROJECT(example-project CXX)
 
 INCLUDE(cmake/Settings.cmake)
 
