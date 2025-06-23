@@ -16,19 +16,14 @@ FIND_PACKAGE(CMLIB
     REQUIRED
 )
 
-IF(NOT BRINGAUTO_SYSTEM_DEP)
-    INCLUDE(cmake/Dependencies.cmake)
-ENDIF()
+INCLUDE(cmake/Dependencies.cmake)
 
 #
 # After package add we can use standard FIND_LIBRARY
 # as a documented by the package upstream
 #
-FIND_PACKAGE(ZLIB          REQUIRED)
-FIND_PACKAGE(CURL          REQUIRED)
-
-# We need to update RPATH to install path of dependencicies
-SET(CMAKE_INSTALL_RPATH "$ORIGIN/../lib")
+FIND_PACKAGE(ZLIB REQUIRED)
+FIND_PACKAGE(CURL REQUIRED)
 
 CMDEF_ADD_EXECUTABLE(
     TARGET example-project
