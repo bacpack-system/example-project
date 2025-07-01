@@ -16,7 +16,9 @@ FIND_PACKAGE(CMLIB
     REQUIRED
 )
 
-INCLUDE(cmake/Dependencies.cmake)
+# Define curl and zlib packages
+BA_PACKAGE_LIBRARY(curl v7.79.1)
+BA_PACKAGE_LIBRARY(zlib v1.2.11 OUTPUT_PATH_VAR ZLIB_ROOT)
 
 #
 # After package add we can use standard FIND_LIBRARY
