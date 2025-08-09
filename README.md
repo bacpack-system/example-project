@@ -7,31 +7,38 @@ This project [can be used as a template](#using-the-template-project) for other 
 
 # Requirements 
 
-No depencies are required on host system. The only `curl` dependency is pulled using Package Tracker.
+- Dependencies build and stored in Package Repository.
+  see [example usage documentation].
+- [CMCONF Global Configuration] installed and prepared
+
+Local Package Repository is used in this example.
 
 # Run 
 
 ./example-projectd
 
-# Build 
+# Build
 
 ```
 mkdir -p _build && cd _build
 cmake ../
-make -j 8
+make
 ```
 
 # Using the Template Project
 
-The template project can be used as a starting point for other projects. The following steps
-describe how to use it with emphasis on BacPack specific changes. More informations can be found in
-[example usage documentation](https://bacpack-system.github.io/example_usage).
+Example project can be used as a starting point for other projects.
 
-1. (Copy the repository, update code) - not BacPack specific
-2. Update link to Package Tracker in `CMLibStorage.cmake` (sets using specific Package Repository)
-3. Update `CMakeLists.txt`:
-    - Change `BA_PACKAGE_LIBRARY(curl v7.79.1)` to `BA_PACKAGE_LIBRARY(<your_package_name> <your_package_version>)`,
-      all used Packages must be present in the used Package Repository
-    - Change `FIND_PACKAGE(CURL REQUIRED)` to `FIND_PACKAGE(<your_package_name> REQUIRED)`
-    - Change `TARGET_LINK_LIBRARIES(example-project PUBLIC CURL::libcurl)` to
-      `TARGET_LINK_LIBRARIES(example-project PUBLIC <your_package_name>::<your_package_target>)`
+1. Choose in which [CMCONF] System the project will belong to.
+1. Update Config.cmake as stated in [config/README.md]. Config.cmake shall not be, in most cases, part of the project
+   and shall be stored outside of the project source tree. It highly depends on usage - if the system has the only 
+   project it coukld make sense to be part of the project source tree. 
+1. Install Config.cmake as stated in [config/README.md].
+1. Update `CMakeLists.txt` as desired for the project needs.
+
+More informations can be found in [example usage documentation].
+
+[example usage documentation]: https://bacpack-system.github.io/example_usage
+[CMCONF]: https://github.com/cmakelib/cmakelib-component-cmconf
+[CMCONF Global Configuration]: ./config/README.md
+[config/README.md]: ./config/README.md
