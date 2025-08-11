@@ -5,8 +5,6 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 3.18)
 PROJECT(example-project CXX)
 
-INCLUDE(cmake/Settings.cmake)
-
 #
 # We initialize CMLIB library.
 # If you do not have one just follow https://github.com/cmakelib/cmakelib
