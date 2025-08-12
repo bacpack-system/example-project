@@ -1,0 +1,26 @@
+#
+# Example configuration for CMCONF system.
+#
+
+FIND_PACKAGE(CMLIB REQUIRED COMPONENTS CMCONF)
+
+CMCONF_INIT_SYSTEM(EXAMPLE)
+
+#
+# Setting using upstream Package Repository by default for this system. This can be overridden by
+# App in CMakeLists.txt.
+#
+CMCONF_SET(BA_PACKAGE_LOCAL_USE OFF)
+CMCONF_SET(BA_PACKAGE_LOCAL_PATH "")
+
+#
+# The http authorization header is usually used for accessing private Package Repositories. This
+# example does not need it, but the variable must be set.
+#
+CMCONF_SET(BA_PACKAGE_HTTP_AUTHORIZATION_HEADER "")
+
+#
+# Setting BringAuto's Package Repository URI Template
+#
+CMCONF_SET(BA_PACKAGE_URI_REVISION master)
+CMCONF_SET(BA_PACKAGE_URI_TEMPLATE_REMOTE "https://gitea.bringauto.com/fleet-protocol/package-repository/media/<REVISION>/package/<GIT_PATH>/<PACKAGE_GROUP_NAME>/<ARCHIVE_NAME>")
