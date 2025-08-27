@@ -32,9 +32,9 @@ CMDEF_ADD_EXECUTABLE(
 )
 TARGET_LINK_LIBRARIES(example-project PUBLIC CURL::libcurl ZLIB::ZLIB)
 
-# Install created target
+# Install created target with all needed CMake package files
 CMDEF_INSTALL(TARGET example-project)
 
-# Install all shared library dependencies needed for json_target
+# Install all shared library dependencies needed for example-project
 # and update RUNPATH.
 BA_PACKAGE_DEPS_IMPORTED(example-project)
