@@ -30,9 +30,5 @@ Let `X` is a SYSTEM name.
 - Install `CMCONF_XConfig.cmake` as described above.
 
 
-[CMCONF_EXAMPLEConfig.cmake]: https://github.com/bacpack-system/package-tracker/example/config
-[Package Tracker]: https://github.com/bacpack-system/package-tracker
-[Package Tracker Example]: https://github.com/bacpack-system/package-tracker/example
-[CMCONF]: https://github.com/cmakelib/cmakelib-component-cmconf
 [cmakelib]: https://github.com/cmakelib/cmakelib
 [example usage documentation]: https://bacpack-system.github.io/example_usage
