@@ -22,7 +22,7 @@ cmake -DCMCONF_UNINSTALL=ON -P ./CMCONF_EXAMPLEConfig.cmake
 
 ## Change System Name
 
-Let `X` is a SYSTEM name.
+Let `X` be the SYSTEM name.
 
 - Rename `CMCONF_EXAMPLEConfig.cmake` to `CMCONF_XConfig.cmake`,
 - Rename `EXAMPLE` to `X` in `CMCONF_XConfig.cmake`,
