@@ -5,6 +5,8 @@ documentation. It prints content of HTTP GET request for `www.example.com` domai
 
 This project [can be used as a template](#using-the-template-project) for other CMake-based projects.
 
+Full-fledged documentation can be found at [bacpack-system.github.io](https://bacpack-system.github.io).
+
 # Requirements
 
 - Dependencies built and available in Package Repository. See [example usage documentation]
